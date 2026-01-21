@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Các Mẫu Hình Nến Tài Chính</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f2f4f8;
+            scroll-behavior: smooth;
         }
 
         header {
             background-color: #0d1b2a;
             color: white;
-            padding: 25px;
+            padding: 30px;
             text-align: center;
         }
 
         nav {
             background-color: #1b263b;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -28,29 +34,40 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
         }
 
         nav a:hover {
             color: #4cc9f0;
         }
 
-        .intro {
-            padding: 30px;
+        section {
+            padding: 40px 30px;
+        }
+
+        h2 {
             text-align: center;
+            color: #1b263b;
         }
 
         .candles {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 30px;
+            margin-top: 30px;
         }
 
         .candle {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .candle:hover {
+            transform: translateY(-5px);
         }
 
         .candle img {
@@ -59,103 +76,144 @@
             object-fit: contain;
         }
 
-        .candle h3 {
-            margin-top: 15px;
-            color: #1b263b;
-        }
-
-        .candle p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
         footer {
             background-color: #0d1b2a;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 500px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .close {
+            color: red;
+            font-size: 18px;
+            cursor: pointer;
+            float: right;
         }
     </style>
 </head>
+
 <body>
 
-<header>
+<header id="home">
     <h1>CÁC MẪU HÌNH NẾN TÀI CHÍNH</h1>
-    <p>Phân tích kỹ thuật trong Forex • Crypto • Chứng khoán</p>
+    <p>Phân tích kỹ thuật Forex • Crypto • Chứng khoán</p>
 </header>
 
 <nav>
-    <a href="#">Trang chủ</a>
-    <a href="#">Nến đảo chiều</a>
-    <a href="#">Nến tiếp diễn</a>
-    <a href="#">Liên hệ</a>
+    <a href="#home">Trang chủ</a>
+    <a href="#reversal">Nến đảo chiều</a>
+    <a href="#continuation">Nến tiếp diễn</a>
+    <a href="#contact">Liên hệ</a>
 </nav>
 
-<section class="intro">
+<section>
     <h2>Mẫu hình nến là gì?</h2>
-    <p>
+    <p style="text-align:center;max-width:700px;margin:auto">
         Mẫu hình nến Nhật giúp trader dự đoán xu hướng thị trường
-        thông qua hành vi giá. Dưới đây là những mẫu hình phổ biến nhất.
+        thông qua hành vi giá.
     </p>
 </section>
 
-<section class="candles">
+<section id="reversal">
+    <h2>Nến đảo chiều</h2>
 
-    <div class="candle">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Hammer_candlestick.png" alt="Hammer">
-        <h3>Nến Hammer</h3>
-        <p>
-            Xuất hiện ở cuối xu hướng giảm. Thân nến nhỏ, bóng dưới dài,
-            báo hiệu khả năng đảo chiều tăng.
-        </p>
+    <div class="candles">
+        <div class="candle" onclick="openModal('Hammer')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Hammer_candlestick.png">
+            <h3>Nến Hammer</h3>
+            <p>Đảo chiều tăng cuối xu hướng giảm</p>
+        </div>
+
+        <div class="candle" onclick="openModal('Inverted Hammer')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Inverted_hammer.png">
+            <h3>Inverted Hammer</h3>
+            <p>Lực mua bắt đầu xuất hiện</p>
+        </div>
+
+        <div class="candle" onclick="openModal('Morning Star')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Morning_star.png">
+            <h3>Morning Star</h3>
+            <p>Mô hình đảo chiều mạnh</p>
+        </div>
     </div>
+</section>
 
-    <div class="candle">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Inverted_hammer.png" alt="Inverted Hammer">
-        <h3>Nến Inverted Hammer</h3>
-        <p>
-            Xuất hiện sau xu hướng giảm, cho thấy lực mua bắt đầu quay lại thị trường.
-        </p>
+<section id="continuation">
+    <h2>Nến tiếp diễn</h2>
+
+    <div class="candles">
+        <div class="candle" onclick="openModal('Bullish Engulfing')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Bullish_engulfing.png">
+            <h3>Bullish Engulfing</h3>
+            <p>Xác nhận lực mua mạnh</p>
+        </div>
+
+        <div class="candle" onclick="openModal('Bearish Engulfing')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Bearish_engulfing.png">
+            <h3>Bearish Engulfing</h3>
+            <p>Lực bán chiếm ưu thế</p>
+        </div>
+
+        <div class="candle" onclick="openModal('Doji')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Doji_candlestick.png">
+            <h3>Nến Doji</h3>
+            <p>Thị trường lưỡng lự</p>
+        </div>
     </div>
+</section>
 
-    <div class="candle">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Bullish_engulfing.png" alt="Bullish Engulfing">
-        <h3>Bullish Engulfing</h3>
-        <p>
-            Nến tăng bao trùm nến giảm trước đó, thể hiện lực mua mạnh.
-        </p>
-    </div>
-
-    <div class="candle">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Bearish_engulfing.png" alt="Bearish Engulfing">
-        <h3>Bearish Engulfing</h3>
-        <p>
-            Nến giảm bao trùm nến tăng trước đó, báo hiệu khả năng đảo chiều giảm.
-        </p>
-    </div>
-
-    <div class="candle">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Doji_candlestick.png" alt="Doji">
-        <h3>Nến Doji</h3>
-        <p>
-            Giá mở cửa và đóng cửa gần như bằng nhau,
-            thể hiện sự lưỡng lự của thị trường.
-        </p>
-    </div>
-
-    <div class="candle">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Morning_star.png" alt="Morning Star">
-        <h3>Mô hình Morning Star</h3>
-        <p>
-            Mô hình 3 nến báo hiệu đảo chiều tăng sau xu hướng giảm.
-        </p>
-    </div>
-
+<section id="contact">
+    <h2>Liên hệ</h2>
+    <p style="text-align:center">
+        📧 Email: hieuumtrading@gmail.com <br>
+        📘 Facebook: fb.com/hieuumtrading
+    </p>
 </section>
 
 <footer>
-    <p>© 2026 | Website học mẫu hình nến tài chính</p>
+    © 2026 | Website học mẫu hình nến tài chính
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">✖</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script>
+    function openModal(name) {
+        document.getElementById("modalTitle").innerText = name;
+        document.getElementById("modalText").innerText =
+            "Đây là phần mô tả chi tiết cho " + name +
+            ". Bạn có thể bổ sung chiến lược, ví dụ giao dịch, lưu ý rủi ro.";
+        document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
