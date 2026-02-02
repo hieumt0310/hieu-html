@@ -1,142 +1,90 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Nến đảo chiều – Candlestick Pattern</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f2f4f8;
-        }
 
-        header {
-            background: #0d1b2a;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+<div class="cards">
+<div class="card">
+<h3>Backtest Thuê</h3>
+<p>200k - 1tr / chiến lược</p>
+</div>
 
-        nav {
-            background: #1b263b;
-            padding: 12px;
-            text-align: center;
-        }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+<div class="card">
+<h3>Báo Cáo Tháng</h3>
+<p>100k / tháng / người</p>
+</div>
 
-        nav a:hover {
-            color: #4cc9f0;
-        }
 
-        section {
-            padding: 40px;
-            max-width: 1200px;
-            margin: auto;
-        }
+<div class="card">
+<h3>Dạy 1-1</h3>
+<p>Hướng dẫn Excel & phân tích dữ liệu</p>
+</div>
+</div>
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,.1);
-        }
+</div>
 
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
 
-        footer {
-            background: #0d1b2a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
-</head>
+<div class="container" id="contact">
 
-<body>
 
-<header>
-    <h1>NẾN ĐẢO CHIỀU</h1>
-    <p>Các mô hình báo hiệu thay đổi xu hướng</p>
-</header>
+<div class="section-title">
+<h2>Liên Hệ</h2>
+<p>Nhận tư vấn và hợp tác</p>
+</div>
 
-<nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="reversal.html">Nến đảo chiều</a>
-    <a href="continuation.html">Nến tiếp diễn</a>
-</nav>
 
-<section>
-    <h2>Nến đảo chiều là gì?</h2>
-    <p>
-        Nến đảo chiều là các mô hình candlestick xuất hiện ở cuối xu hướng,
-        báo hiệu khả năng thị trường chuẩn bị đổi hướng.
-    </p>
-</section>
+<div class="card" style="max-width:600px;margin:auto;">
+<p><strong>Email:</strong> forexdata@gmail.com</p>
+<p><strong>Zalo:</strong> 09xx.xxx.xxx</p>
+<p><strong>Telegram:</strong> @forexdata</p>
+<br>
+<p>Inbox để nhận báo cáo mẫu miễn phí.</p>
+</div>
 
-<section class="grid">
 
-    <div class="card">
-        <img src="/images/hammer.png" alt="Hammer">
-        <h3>Nến Hammer</h3>
-        <p>
-            Xuất hiện cuối xu hướng giảm. Bóng dưới dài cho thấy lực mua mạnh
-            đẩy giá lên, báo hiệu đảo chiều tăng.
-        </p>
-        <ul>
-            <li>Xu hướng trước: Giảm</li>
-            <li>Xác nhận: Nến tăng sau đó</li>
-        </ul>
-    </div>
+</div>
 
-    <div class="card">
-        <img src="/images/inverted-hammer.png" alt="Inverted Hammer">
-        <h3>Inverted Hammer</h3>
-        <p>
-            Bóng trên dài, thân nhỏ. Thể hiện bên mua bắt đầu phản kháng
-            sau giai đoạn giảm.
-        </p>
-        <ul>
-            <li>Độ tin cậy: Trung bình</li>
-            <li>Cần nến xác nhận</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <img src="/images/morning-star.png" alt="Morning Star">
-        <h3>Morning Star</h3>
-        <p>
-            Mô hình 3 nến mạnh, báo hiệu đảo chiều tăng rõ ràng
-            sau xu hướng giảm kéo dài.
-        </p>
-        <ul>
-            <li>Độ tin cậy: Cao</li>
-            <li>Phổ biến trong Forex & Crypto</li>
-        </ul>
-    </div>
-
-</section>
 
 <footer>
-    © 2026 | Candlestick Trading Education
+<p>© 2026 Forex Data Analysis | Design by HieuKun</p>
+<p><a href="#">Chính sách bảo mật</a></p>
 </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('myChart');
+
+
+new Chart(ctx, {
+type: 'line',
+data: {
+labels: ['T1','T2','T3','T4','T5','T6','T7'],
+datasets: [{
+label: 'Lợi nhuận (%)',
+data: [2, 5, 3, 8, 12, 15, 18],
+borderColor: '#38bdf8',
+backgroundColor: 'rgba(56,189,248,0.2)',
+tension: 0.4,
+fill: true
+}]
+},
+options: {
+responsive: true,
+plugins: {
+legend: {
+display: true
+}
+},
+scales: {
+y: {
+beginAtZero: true
+}
+}
+}
+});
+</script>
+
 
 </body>
 </html>
