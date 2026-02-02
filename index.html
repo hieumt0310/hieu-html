@@ -1,90 +1,275 @@
 <!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phân Tích Forex Bằng Số Liệu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+    body{background:#f4f7fb;color:#1f2937}
+    a{text-decoration:none;color:inherit}
 
+    /* Header */
+    header{
+      background:linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:white;
+      padding:25px 5%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{font-size:24px;font-weight:800}
+    nav a{
+      margin-left:20px;
+      font-weight:600;
+      transition:.3s;
+    }
+    nav a:hover{color:#38bdf8}
 
-<div class="cards">
-<div class="card">
-<h3>Backtest Thuê</h3>
-<p>200k - 1tr / chiến lược</p>
-</div>
+    /* Hero */
+    .hero{
+      background:linear-gradient(135deg,#1e3a8a,#2563eb);
+      color:white;
+      padding:80px 5%;
+      text-align:center;
+    }
+    .hero h2{font-size:40px;margin-bottom:15px}
+    .hero p{font-size:18px;margin-bottom:30px}
+    .btn{
+      background:#38bdf8;
+      color:#0f172a;
+      padding:14px 28px;
+      border-radius:30px;
+      font-weight:700;
+      display:inline-block;
+      transition:.3s;
+    }
+    .btn:hover{background:#0ea5e9;color:white}
 
+    /* Sections */
+    section{padding:70px 5%}
+    .section-title{text-align:center;margin-bottom:50px}
+    .section-title h3{font-size:32px;margin-bottom:10px}
+    .section-title p{color:#6b7280}
 
-<div class="card">
-<h3>Báo Cáo Tháng</h3>
-<p>100k / tháng / người</p>
-</div>
+    /* Products */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      text-align:center;
+      transition:.3s;
+    }
+    .card:hover{transform:translateY(-5px)}
+    .card h4{margin:15px 0}
+    .price{font-size:22px;font-weight:800;color:#2563eb}
 
+    /* Lead */
+    .lead{
+      background:#e0f2fe;
+      border-radius:20px;
+      padding:50px;
+      max-width:700px;
+      margin:auto;
+      text-align:center;
+    }
+    .lead input{
+      width:100%;
+      padding:14px;
+      margin:12px 0;
+      border-radius:10px;
+      border:1px solid #cbd5f5;
+    }
+    .lead button{
+      width:100%;
+      padding:14px;
+      border:none;
+      background:#2563eb;
+      color:white;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .lead button:hover{background:#1d4ed8}
 
-<div class="card">
-<h3>Dạy 1-1</h3>
-<p>Hướng dẫn Excel & phân tích dữ liệu</p>
-</div>
-</div>
+    /* Services */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+    .service{
+      background:white;
+      padding:25px;
+      border-radius:16px;
+      box-shadow:0 6px 20px rgba(0,0,0,.07);
+    }
 
+    /* Guide */
+    .guide{
+      background:#0f172a;
+      color:white;
+      border-radius:20px;
+      padding:50px;
+      line-height:1.8;
+    }
 
-</div>
+    /* Footer */
+    footer{
+      background:#020617;
+      color:#94a3b8;
+      padding:30px 5%;
+      text-align:center;
+      margin-top:60px;
+    }
 
+    @media(max-width:768px){
+      .hero h2{font-size:28px}
+      header{flex-direction:column}
+      nav{margin-top:15px}
+    }
+  </style>
+</head>
+<body>
 
-<div class="container" id="contact">
+<!-- Header -->
+<header>
+  <h1>Forex Data Lab</h1>
+  <nav>
+    <a href="#home">Trang chủ</a>
+    <a href="#products">Sản phẩm</a>
+    <a href="#lead">Báo cáo</a>
+    <a href="#services">Dịch vụ</a>
+    <a href="#guide">Kiếm tiền</a>
+  </nav>
+</header>
 
+<!-- Hero -->
+<section class="hero" id="home">
+  <h2>Phân Tích Forex Bằng Số Liệu Thực</h2>
+  <p>Giúp bạn trade có xác suất cao – dựa trên dữ liệu lịch sử 20+ năm</p>
+  <a href="#lead" class="btn">Nhận Báo Cáo Miễn Phí</a>
+</section>
 
-<div class="section-title">
-<h2>Liên Hệ</h2>
-<p>Nhận tư vấn và hợp tác</p>
-</div>
+<!-- Products -->
+<section id="products">
+  <div class="section-title">
+    <h3>Sản Phẩm</h3>
+    <p>File – Khóa học – Công cụ phân tích</p>
+  </div>
 
+  <div class="products">
+    <div class="card">
+      <h4>File Excel EUR/USD</h4>
+      <p>Dữ liệu 1970–2026 + công thức</p>
+      <div class="price">199.000đ</div>
+      <a href="#" class="btn">Mua Ngay</a>
+    </div>
 
-<div class="card" style="max-width:600px;margin:auto;">
-<p><strong>Email:</strong> forexdata@gmail.com</p>
-<p><strong>Zalo:</strong> 09xx.xxx.xxx</p>
-<p><strong>Telegram:</strong> @forexdata</p>
-<br>
-<p>Inbox để nhận báo cáo mẫu miễn phí.</p>
-</div>
+    <div class="card">
+      <h4>Khóa Học Data Trading</h4>
+      <p>Trade theo thống kê</p>
+      <div class="price">999.000đ</div>
+      <a href="#" class="btn">Đăng Ký</a>
+    </div>
 
+    <div class="card">
+      <h4>Flashcard Setup</h4>
+      <p>100+ mô hình xác suất</p>
+      <div class="price">299.000đ</div>
+      <a href="#" class="btn">Mua Ngay</a>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- Lead -->
+<section id="lead">
+  <div class="section-title">
+    <h3>Nhận Báo Cáo Miễn Phí</h3>
+    <p>Tải report xác suất thắng theo dữ liệu</p>
+  </div>
 
+  <div class="lead">
+    <h4>Nhập Email để nhận báo cáo</h4>
+    <input type="text" placeholder="Họ tên">
+    <input type="email" placeholder="Email">
+    <button>Nhận Ngay</button>
+    <p style="margin-top:10px;color:#475569">* Không spam – bảo mật thông tin</p>
+  </div>
+</section>
 
+<!-- Services -->
+<section id="services">
+  <div class="section-title">
+    <h3>Dịch Vụ</h3>
+    <p>Hỗ trợ trader cá nhân & doanh nghiệp</p>
+  </div>
+
+  <div class="services">
+    <div class="service">
+      <h4>Phân tích riêng</h4>
+      <p>Backtest theo chiến lược của bạn</p>
+    </div>
+
+    <div class="service">
+      <h4>Tư vấn 1-1</h4>
+      <p>Setup hệ thống giao dịch</p>
+    </div>
+
+    <div class="service">
+      <h4>Copytrade</h4>
+      <p>Kết nối tài khoản MT4/MT5</p>
+    </div>
+
+    <div class="service">
+      <h4>API Data</h4>
+      <p>Cung cấp dữ liệu cho dev</p>
+    </div>
+  </div>
+</section>
+
+<!-- Guide -->
+<section id="guide">
+  <div class="section-title">
+    <h3>Hướng Dẫn Kiếm Tiền</h3>
+    <p>Xây dựng doanh nghiệp Forex Data</p>
+  </div>
+
+  <div class="guide">
+    <h4>🚀 Mô hình kiếm tiền</h4>
+    <p>
+      1️⃣ Bán file dữ liệu + tool<br>
+      2️⃣ Thu lead bằng report miễn phí<br>
+      3️⃣ Upsell khóa học nâng cao<br>
+      4️⃣ Cung cấp dịch vụ tư vấn<br>
+      5️⃣ Làm cộng đồng Telegram/Zalo
+    </p>
+
+    <h4 style="margin-top:20px">💰 Lộ trình</h4>
+    <p>
+      Tháng 1–2: Thu lead + xây brand<br>
+      Tháng 3: Ra sản phẩm đầu tiên<br>
+      Tháng 6: Scale ads + cộng đồng<br>
+      Năm 1: Xây team + hệ thống
+    </p>
+
+    <h4 style="margin-top:20px">📈 Mục tiêu</h4>
+    <p>10–50 triệu/tháng → 100 triệu+</p>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
-<p>© 2026 Forex Data Analysis | Design by HieuKun</p>
-<p><a href="#">Chính sách bảo mật</a></p>
+  <p>© 2026 Forex Data Lab | Phân tích bằng dữ liệu</p>
+  <p>Liên hệ: Zalo / Telegram / Facebook</p>
 </footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const ctx = document.getElementById('myChart');
-
-
-new Chart(ctx, {
-type: 'line',
-data: {
-labels: ['T1','T2','T3','T4','T5','T6','T7'],
-datasets: [{
-label: 'Lợi nhuận (%)',
-data: [2, 5, 3, 8, 12, 15, 18],
-borderColor: '#38bdf8',
-backgroundColor: 'rgba(56,189,248,0.2)',
-tension: 0.4,
-fill: true
-}]
-},
-options: {
-responsive: true,
-plugins: {
-legend: {
-display: true
-}
-},
-scales: {
-y: {
-beginAtZero: true
-}
-}
-}
-});
-</script>
-
 
 </body>
 </html>
