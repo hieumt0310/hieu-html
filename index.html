@@ -1,3 +1,20 @@
+<script>
+const bankRadio = document.getElementById("bank");
+const codRadio = document.getElementById("cod");
+const bankInfo = document.getElementById("bankInfo");
+
+bankRadio.addEventListener("change", function () {
+  if (this.checked) {
+    bankInfo.style.display = "block";
+  }
+});
+
+codRadio.addEventListener("change", function () {
+  if (this.checked) {
+    bankInfo.style.display = "none";
+  }
+});
+</script>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -285,8 +302,12 @@ footer {
 
 
       <label>
-        <input type="radio" name="pay" checked>
-        Thanh toán chuyển khoản
+       <input type="radio" name="payment" id="bank" value="bank">
+<label for="bank">Chuyển khoản / QR</label>
+
+<input type="radio" name="payment" id="cod" value="cod">
+<label for="cod">COD</label>
+
       </label>
 
       <label>
