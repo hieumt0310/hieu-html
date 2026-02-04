@@ -125,7 +125,43 @@
       font-size:14px;
     }
 
-  </style>
+  <style>
+
+footer {
+  background: #1c1c1c;
+  color: #ccc;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.checkout {
+  padding: 50px 10%;
+  background: #f7f7f7;
+}
+
+.checkout h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.checkout-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.checkout-left,
+.checkout-right {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+</style>
+
 </head>
 <body>
 
@@ -211,6 +247,67 @@
   <p>⚠️ Disclaimer: Nội dung chỉ mang tính giáo dục, không phải lời khuyên đầu tư.</p>
   <p>© 2026 Forex Data Lab - All Rights Reserved</p>
 </footer>
+<!-- ========== THANH TOÁN ========== -->
+<section class="checkout">
+  <h2>Thanh Toán Đơn Hàng</h2>
+
+  <div class="checkout-container">
+
+    <!-- Thông tin khách -->
+    <div class="checkout-left">
+
+      <h3>Thông tin giao hàng</h3>
+
+      <input type="text" placeholder="Họ và tên" required>
+      <input type="tel" placeholder="Số điện thoại" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Địa chỉ">
+      <input type="text" placeholder="Tỉnh / Thành phố">
+
+      <h3>Phương thức thanh toán</h3>
+
+      <label>
+        <input type="radio" name="pay" checked>
+        Thanh toán chuyển khoản
+      </label>
+
+      <label>
+        <input type="radio" name="pay">
+        Thanh toán QR
+      </label>
+
+      <label>
+        <input type="radio" name="pay">
+        COD (Không khuyến nghị)
+      </label>
+
+    </div>
+
+
+    <!-- Tóm tắt đơn -->
+    <div class="checkout-right">
+
+      <h3>Giỏ hàng</h3>
+
+      <div class="product-box">
+        <img src="https://via.placeholder.com/80">
+        <div>
+          <p>Khóa học Forex Pro</p>
+          <strong>800.000đ</strong>
+        </div>
+      </div>
+
+      <hr>
+
+      <p>Tổng tiền: <b>800.000đ</b></p>
+
+      <button class="btn-order">ĐẶT HÀNG</button>
+
+    </div>
+
+  </div>
+</section>
+
 
 </body>
 </html>
