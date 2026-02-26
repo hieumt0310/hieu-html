@@ -1,347 +1,402 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phân Tích Forex - Bán Khóa Học</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body{
-      margin:0;
-      font-family:'Inter',sans-serif;
-      background:#f4f6f9;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Lab - Bán Khóa Học Forex</title>
 
-    /* Header */
-    header{
-      background:#0d47a1;
-      color:white;
-      padding:15px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    header h2{margin:0;}
-
-    nav a{
-      color:white;
-      margin-left:20px;
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    /* Banner */
-    .banner{
-      background:linear-gradient(to right,#1565c0,#42a5f5);
-      color:white;
-      padding:60px 20px;
-      text-align:center;
-    }
-
-    .banner h1{font-size:36px;}
-
-    /* Product Section */
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding:40px 20px;
-    }
-
-    .title{
-      text-align:center;
-      margin-bottom:40px;
-    }
-
-    .products{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
-
-    .card{
-      background:white;
-      border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      overflow:hidden;
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-    }
-
-    .card img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-    }
-
-    .card-body{
-      padding:15px;
-    }
-
-    .card-body h3{
-      font-size:17px;
-      margin:10px 0;
-      height:45px;
-      overflow:hidden;
-    }
-
-    .price{
-      color:#e53935;
-      font-size:18px;
-      font-weight:700;
-    }
-
-    .old-price{
-      text-decoration:line-through;
-      color:gray;
-      font-size:14px;
-      margin-left:5px;
-    }
-
-    .btn{
-      display:block;
-      margin-top:12px;
-      background:#1976d2;
-      color:white;
-      text-align:center;
-      padding:10px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .btn:hover{background:#0d47a1;}
-
-    /* Footer */
-    footer{
-      background:#1c1c1c;
-      color:#ccc;
-      text-align:center;
-      padding:25px;
-      margin-top:50px;
-      font-size:14px;
-    }
-
-  <style>
-
-footer {
-  background: #1c1c1c;
-  color: #ccc;
-  text-align: center;
-  padding: 25px;
-  margin-top: 50px;
-  font-size: 14px;
+<style>
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f4f6f9;
 }
 
-.checkout {
-  padding: 50px 10%;
-  background: #f7f7f7;
+/* Header */
+header{
+  background:#0d47a1;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.checkout h2 {
-  text-align: center;
-  margin-bottom: 30px;
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.checkout-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+/* Banner */
+.banner{
+  background:linear-gradient(to right,#1565c0,#42a5f5);
+  color:white;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.banner h1{font-size:36px}
+
+/* Container */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* Products */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  overflow:hidden;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:15px;
+}
+
+.card-body h3{
+  height:45px;
+  overflow:hidden;
+}
+
+.price{
+  color:#e53935;
+  font-weight:700;
+  font-size:18px;
+}
+
+.old-price{
+  text-decoration:line-through;
+  color:gray;
+  font-size:14px;
+}
+
+.btn{
+  display:block;
+  margin-top:12px;
+  background:#1976d2;
+  color:white;
+  text-align:center;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn:hover{background:#0d47a1}
+
+/* Checkout */
+.checkout{
+  padding:50px 10%;
+  background:#f7f7f7;
+}
+
+.checkout h2{
+  text-align:center;
+}
+
+.checkout-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
 }
 
 .checkout-left,
-.checkout-right {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.checkout-right{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-</style>
+.checkout input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
 
+.payment label{
+  display:block;
+  margin:10px 0;
+}
+
+/* Cart */
+.product-box{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+.product-box img{
+  width:70px;
+  border-radius:6px;
+}
+
+/* Order Button */
+.btn-order{
+  width:100%;
+  background:#e53935;
+  color:white;
+  border:none;
+  padding:12px;
+  font-size:16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.btn-order:hover{
+  background:#c62828;
+}
+
+/* Bank Info */
+#bankInfo{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  background:#f9f9f9;
+}
+
+/* Footer */
+footer{
+  background:#1c1c1c;
+  color:#ccc;
+  text-align:center;
+  padding:25px;
+  margin-top:50px;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .checkout-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <h2>Forex Data Lab</h2>
   <nav>
     <a href="#">Trang chủ</a>
-    <a href="#khoahoc">Khóa học</a>
+    <a href="#courses">Khóa học</a>
     <a href="#">Flashcard</a>
     <a href="#">Liên hệ</a>
   </nav>
 </header>
 
 <section class="banner">
- <h1>MT Lab – Phân tích bằng số liệu, tạo niềm tin</h1>
-  <p>Học giao dịch Forex dựa trên Data & Thống kê thực tế</p>
+  <h1>MT Lab – Phân tích bằng số liệu</h1>
+  <p>Học Forex bằng Data & Thống kê thực tế</p>
 </section>
 
-<section class="container" id="khoahoc">
+<!-- COURSES -->
+<section class="container" id="courses">
 
-  <div class="title">
-    <h2>📚 Danh Sách Khóa Học</h2>
-    <p>Chọn khóa học phù hợp để nâng cao kỹ năng giao dịch</p>
-  </div>
+<div class="title">
+<h2>📚 Danh Sách Khóa Học</h2>
+</div>
 
-  <div class="products">
+<div class="products">
 
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="https://cdn.hstatic.net/products/200000928203/ict_3fda3564bc974785a72b3e9a50449e45_grande_320f14c6e2b0403cb2327bf488169167.jpg">
-      <div class="card-body">
-        <h3>Combo ICT + SMC + Wyckoff</h3>
-        <div>
-          <span class="price">3.750.000đ</span>
-          <span class="old-price">4.900.000đ</span>
-        </div>
-        <a href="#" class="btn">Mua ngay</a>
-      </div>
-    </div>
+<div class="card">
+<img src="https://cdn.hstatic.net/products/200000928203/ict_3fda3564bc974785a72b3e9a50449e45_grande_320f14c6e2b0403cb2327bf488169167.jpg">
+<div class="card-body">
+<h3>Combo ICT + SMC + Wyckoff</h3>
+<span class="price">3.750.000đ</span>
+<span class="old-price">4.900.000đ</span>
+<a href="#" class="btn buy">Mua ngay</a>
+</div>
+</div>
 
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="https://cdn.hstatic.net/products/200000928203/16_9d8da6c872194506b3b2b305bbca2281.png">
-      <div class="card-body">
-        <h3>Flashcard ICT Concept</h3>
-        <div>
-          <span class="price">500.000đ</span>
-        </div>
-        <a href="#" class="btn">Mua ngay</a>
-      </div>
-    </div>
+<div class="card">
+<img src="https://cdn.hstatic.net/products/200000928203/16_9d8da6c872194506b3b2b305bbca2281.png">
+<div class="card-body">
+<h3>Flashcard ICT Concept</h3>
+<span class="price">500.000đ</span>
+<a href="#" class="btn buy">Mua ngay</a>
+</div>
+</div>
 
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="https://product.hstatic.net/200000928203/product/supply_demand_d476baf98aed46a5af518b22bdbf1a57_grande.png">
-      <div class="card-body">
-        <h3>Khóa Video ICT Setup</h3>
-        <div>
-          <span class="price">800.000đ</span>
-          <span class="old-price">1.000.000đ</span>
-        </div>
-        <a href="#" class="btn">Mua ngay</a>
-      </div>
-    </div>
+<div class="card">
+<img src="https://product.hstatic.net/200000928203/product/supply_demand_d476baf98aed46a5af518b22bdbf1a57_grande.png">
+<div class="card-body">
+<h3>Khóa Video ICT Setup</h3>
+<span class="price">800.000đ</span>
+<span class="old-price">1.000.000đ</span>
+<a href="#" class="btn buy">Mua ngay</a>
+</div>
+</div>
 
-    <!-- Card 4 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250/3f51b5/ffffff?text=Trading+Pro">
-      <div class="card-body">
-        <h3>Mentor Trade 1-1 Premium</h3>
-        <div>
-          <span class="price">5.000.000đ</span>
-        </div>
-        <a href="#" class="btn">Đăng ký</a>
-      </div>
-    </div>
+<div class="card">
+<img src="https://via.placeholder.com/400x250/3f51b5/ffffff?text=Mentor+1-1">
+<div class="card-body">
+<h3>Mentor Trade 1-1 Premium</h3>
+<span class="price">5.000.000đ</span>
+<a href="#" class="btn buy">Đăng ký</a>
+</div>
+</div>
 
-  </div>
+</div>
+</section>
+
+<!-- CHECKOUT -->
+<section class="checkout" id="checkout">
+
+<h2>Thanh Toán</h2>
+
+<form id="orderForm">
+
+<div class="checkout-container">
+
+<div class="checkout-left">
+
+<h3>Thông tin khách hàng</h3>
+
+<input required placeholder="Họ tên">
+<input required placeholder="Số điện thoại">
+<input type="email" required placeholder="Email">
+
+<h3>Thanh toán</h3>
+
+<div class="payment">
+
+<label>
+<input type="radio" name="payment" id="bank" required>
+ Chuyển khoản / QR
+</label>
+
+<label>
+<input type="radio" name="payment" id="cod">
+ COD
+</label>
+
+</div>
+
+<div id="bankInfo">
+
+<h4>💳 Thông tin chuyển khoản</h4>
+<p><b>Ngân hàng:</b> Techcombank</p>
+<p><b>STK:</b> 4038899999</p>
+<p><b>Chủ TK:</b> MA THE HIEU</p>
+<p><b>Nội dung:</b> MTLAB + SĐT</p>
+
+<img src="https://via.placeholder.com/200x200?text=QR" width="200">
+
+</div>
+
+</div>
+
+<div class="checkout-right">
+
+<h3>Giỏ hàng</h3>
+
+<div class="product-box">
+
+<img src="https://via.placeholder.com/80" id="cartImg">
+
+<div>
+<p id="cartName">Chưa chọn khóa học</p>
+<strong id="cartPrice">0đ</strong>
+</div>
+
+</div>
+
+<hr>
+
+<p>Tổng tiền: <b id="total">0đ</b></p>
+
+<button class="btn-order">ĐẶT HÀNG</button>
+
+</div>
+
+</div>
+</form>
 
 </section>
 
 <footer>
-  <p>⚠️ Disclaimer: Nội dung chỉ mang tính giáo dục, không phải lời khuyên đầu tư.</p>
-  <p>© 2026 MT Lab - All Rights Reserved</p>
+<p>⚠️ Nội dung chỉ mang tính giáo dục.</p>
+<p>© 2026 MT Lab</p>
 </footer>
-<!-- ========== THANH TOÁN ========== -->
-<section class="checkout">
-  <h2>Thanh Toán Đơn Hàng</h2>
-
-  <div class="checkout-container">
-
-    <!-- Thông tin khách -->
-    <div class="checkout-left">
-
-      <h3>Thông tin giao hàng</h3>
-
-      <input type="text" placeholder="Họ và tên" required>
-      <input type="tel" placeholder="Số điện thoại" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Địa chỉ">
-      <input type="text" placeholder="Tỉnh / Thành phố">
-
-      <h3>Phương thức thanh toán</h3>
-      <!-- Thông tin chuyển khoản -->
-<div id="bankInfo" style="display:none; margin-top:15px; padding:15px; border:1px solid #ddd; border-radius:10px; background:#f9f9f9;">
-
-  <h4>💳 Thông tin chuyển khoản</h4>
-
-  <p><b>Ngân hàng:</b> TeckcomBank</p>
-  <p><b>Số tài khoản:</b> 4038899999</p>
-  <p><b>Chủ tài khoản:</b> MA THE HIEU </p>
-  <p><b>Nội dung:</b> MTLAB + SĐT</p>
-
-  <img 
-  src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/622707118_1156114536436667_3224583538042671537_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGjzyL_nECPpR86PrOGQlzPxvLXmJ_zAAXG8teYn_MABTSqEvJ1U0zP76uZlansqC-U9kowX4rA3U263fes4Ft3&_nc_ohc=ZOtXKUFr0lwQ7kNvwEuBYyc&_nc_oc=Adk8RO-y7j1x2ElNYAjxHR-Hr8yh_j9387UNHTHjqyeC_0j0RbBsXz3KVRnaz1oEzYLAuqF7BBEDxmFCA2-ot2Ky&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&oh=03_Q7cD4gHqDnlr829Es8I47LovnBfJjx7ttKyVOimCVtjAnzr6uQ&oe=69AAA518"
-  alt="QR chuyển khoản"
-  style="width:200px; margin-top:10px; border:1px solid #ccc;"
->
-
-</div>
-
-
-      <label>
-       <input type="radio" name="payment" id="bank" value="bank">
-<label for="bank">Chuyển khoản / QR</label>
-
-<input type="radio" name="payment" id="cod" value="cod">
-<label for="cod">COD</label>
-
-      </label>
-
-      <label>
-        <input type="radio" name="pay">
-        Thanh toán QR
-      </label>
-
-      <label>
-        <input type="radio" name="pay">
-        COD (Không khuyến nghị)
-      </label>
-
-    </div>
-
-
-    <!-- Tóm tắt đơn -->
-    <div class="checkout-right">
-
-      <h3>Giỏ hàng</h3>
-
-      <div class="product-box">
-        <img src="https://via.placeholder.com/80">
-        <div>
-          <p>Khóa học Forex Pro</p>
-          <strong>800.000đ</strong>
-        </div>
-      </div>
-
-      <hr>
-
-      <p>Tổng tiền: <b>800.000đ</b></p>
-
-      <button class="btn-order">ĐẶT HÀNG</button>
-
-    </div>
-
-  </div>
-</section>
 
 <script>
-const bankRadio = document.getElementById("bank");
-const codRadio = document.getElementById("cod");
+const buyBtns = document.querySelectorAll(".buy");
+const cartName = document.getElementById("cartName");
+const cartPrice = document.getElementById("cartPrice");
+const cartImg = document.getElementById("cartImg");
+const total = document.getElementById("total");
+
+const bank = document.getElementById("bank");
+const cod = document.getElementById("cod");
 const bankInfo = document.getElementById("bankInfo");
 
-bankRadio.addEventListener("change", function () {
-  bankInfo.style.display = "block";
+buyBtns.forEach(btn=>{
+  btn.addEventListener("click",e=>{
+    e.preventDefault();
+
+    const card = btn.closest(".card");
+
+    const name = card.querySelector("h3").innerText;
+    const price = card.querySelector(".price").innerText;
+    const img = card.querySelector("img").src;
+
+    cartName.innerText = name;
+    cartPrice.innerText = price;
+    total.innerText = price;
+    cartImg.src = img;
+
+    document.getElementById("checkout")
+      .scrollIntoView({behavior:"smooth"});
+  });
 });
 
-codRadio.addEventListener("change", function () {
-  bankInfo.style.display = "none";
+bank.addEventListener("change",()=>{
+  bankInfo.style.display="block";
+});
+
+cod.addEventListener("change",()=>{
+  bankInfo.style.display="none";
+});
+
+document.getElementById("orderForm")
+.addEventListener("submit",e=>{
+  e.preventDefault();
+  alert("Đặt hàng thành công! Chúng tôi sẽ liên hệ sớm.");
 });
 </script>
 
